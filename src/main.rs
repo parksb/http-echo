@@ -6,8 +6,8 @@ use std::thread;
 
 fn parse_args() -> (String, Arc<str>) {
     let args: Vec<String> = env::args().collect();
-    let mut listen = "0.0.0.0:5678".to_string();
-    let mut text = "hello world".to_string();
+    let mut listen = env::var("LISTEN").unwrap_or_else(|_| "0.0.0.0:5678".to_string());
+    let mut text = env::var("TEXT").unwrap_or_else(|_| "hello world".to_string());
 
     let mut i = 1;
     while i < args.len() {
