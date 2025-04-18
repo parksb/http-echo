@@ -29,4 +29,4 @@ ENV LISTEN="0.0.0.0:5678"
 ENV TEXT="hello-world"
 
 ENTRYPOINT ["/usr/local/bin/http-echo"]
-CMD ["--listen", "${LISTEN}", "--text", "${TEXT}"]
+CMD ["--listen", "5678", "--text", "hello-world"]
